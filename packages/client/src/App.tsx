@@ -12,7 +12,7 @@ const App: React.FC = () => {
     <IonApp>
       <TRPCProvider>
         <IonReactRouter>
-          <IonRouterOutlet >
+          <IonRouterOutlet>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
           </IonRouterOutlet>
