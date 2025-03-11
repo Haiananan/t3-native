@@ -1,0 +1,25 @@
+# 使用官方的 Node.js 镜像作为基础
+FROM node:18-alpine
+
+# 设置工作目录（创建并进入目录）
+WORKDIR /usr/src/app
+
+COPY prisma ./
+
+# Install dependencies based on the preferred package manager
+COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+RUN npm i pnpm -g && pnpm i 
+
+# 复制应用的源代码到工作目录
+COPY . .
+
+# 构建 TypeScript 源代码
+# RUN npm run start
+
+# 暴露应用所运行的端口（假设应用在端口3000运行，可以根据实际情况修改）
+EXPOSE 3000
+
+ENV PORT=3000
+
+# 启动应用
+CMD ["tsx", "./src/main.ts"]

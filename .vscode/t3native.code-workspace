@@ -1,0 +1,48 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "..",
+    },
+    {
+      "name": "client",
+      "path": "../packages/client",
+    },
+    {
+      "name": "server",
+      "path": "../packages/server",
+    },
+  ],
+  "settings": {
+    // 隐藏根目录下的重复文件夹
+    "files.exclude": {
+      "packages/": true,
+      "**/node_modules": true,
+      "**/.turbo": true,
+      "**/dist": true,
+      "**/.next": true,
+    },
+    // Tailwind 配置
+    "tailwindCSS.experimental.configFile": "../packages/client/tailwind.config.cjs",
+    "tailwindCSS.includeLanguages": {
+      "typescript": "javascript",
+      "typescriptreact": "javascript",
+    },
+    "editor.quickSuggestions": {
+      "strings": true,
+    },
+    // 编辑器配置
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "never",
+    },
+    // 搜索配置
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/.next": true,
+    },
+  },
+}

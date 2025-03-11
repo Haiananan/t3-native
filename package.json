@@ -1,0 +1,34 @@
+{
+  "name": "t3-stack-template",
+  "version": "1.0.0",
+  "description": "T3 Stack Template - Vite+React+Tailwind 前端和 tRPC+Prisma 后端",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --workspace=client & npm run dev --workspace=server",
+    "build": "npm run build --workspace=client && npm run build --workspace=server",
+    "start": "npm run start --workspace=server",
+    "format:fix": "prettier --write \"packages/*/src/**/*.{ts,tsx}\"",
+    "clean": "rimraf node_modules **/*/node_modules **/*/dist **/*/build **/*/package-lock.json",
+    "reset": "pnpm clean && pnpm install"
+  },
+  "workspaces": [
+    "./packages/client",
+    "./packages/server"
+  ],
+  "keywords": [
+    "t3-stack",
+    "trpc",
+    "react",
+    "vite",
+    "tailwind",
+    "prisma"
+  ],
+  "author": "blain3",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.3.3"
+  }
+}

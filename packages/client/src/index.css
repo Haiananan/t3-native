@@ -1,0 +1,65 @@
+@config "../tailwind.config.cjs";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark-mode: #181b1f;
+  --light-mode: #f1f5f9;
+  --bg-n-7: #181b1f;
+  ion-menu {
+    --ion-backdrop-color: transparent;
+  }
+}
+
+body {
+  --ion-color-primary: var(--light-mode);
+  --ion-color-secondary: var(--light-mode);
+  --ion-color-tertiary: var(--light-mode);
+  --ion-color-success: var(--light-mode);
+  --ion-color-warning: var(--light-mode);
+  --ion-color-danger: var(--light-mode);
+  --ion-color-light: var(--light-mode);
+  --ion-color-medium: var(--light-mode);
+  --ion-color-dark: var(--light-mode);
+  --ion-background-color: var(--light-mode);
+  --ion-content-color: var(--light-mode);
+  --ion-text-color: var(--dark-mode);
+  --ion-toolbar-background-color: var(--light-mode);
+  --ion-toolbar-color: var(--dark-mode);
+}
+
+body.dark {
+  --ion-color-primary: var(--dark-mode);
+  --ion-color-secondary: var(--dark-mode);
+  --ion-color-tertiary: var(--dark-mode);
+  --ion-color-success: var(--dark-mode);
+  --ion-color-warning: var(--dark-mode);
+  --ion-color-danger: var(--dark-mode);
+  --ion-color-light: var(--dark-mode);
+  --ion-color-medium: var(--dark-mode);
+  --ion-color-dark: var(--dark-mode);
+  --ion-background-color: var(--dark-mode);
+  --ion-content-color: var(--dark-mode);
+  --ion-text-color: var(--light-mode);
+  --ion-toolbar-background-color: var(--dark-mode);
+  --ion-toolbar-color: var(--light-mode);
+}
+
+ion-menu::part(backdrop) {
+  display: none;
+}
+
+ion-menu::part(container) {
+  /* border-radius: 0 20px 20px 0; */
+  box-shadow: none;
+}
+
+/* 移除 split pane 的边框 */
+ion-split-pane {
+  --border: none;
+}
+
+ion-menu::part(backdrop) {
+  background-color: transparent;
+}
